@@ -1,5 +1,10 @@
 const apiKey = 'DaYe-aEmAaJxzgjsSuFsjHILYNzY7BWRWTiYgg4bl_k';
 const unsplashApiURL = 'https://api.unsplash.com';
+const fetchTriggerPos = 1000;
+const minimizeHeaderPos = 58;
+const maximizeHeaderPos = 45;
+const minimizedClass = 'minimized';
+const maximizedClass = 'maximized';
 
 const imageContainerEl = document.getElementById('image-container');
 const errorContainerEl = document.getElementById('error-container');
@@ -23,8 +28,6 @@ async function getImages() {
     const url = `${unsplashApiURL}/photos/random/?client_id=${apiKey}&query=${encodeURIComponent('vans shoes')}&per_page=${count}&page=${page}&count=${count}`;
     const response = await fetch(url);
     const data = await response.json();
-
-    console.log({ data });
 
     data.forEach((image) => {
       images.push({
@@ -127,15 +130,15 @@ window.onload = async () => {
 
   window.addEventListener('scroll', () => {
     const scrollPosition = window.innerHeight + window.scrollY;
-    const triggerFetchPoint = document.body.offsetHeight - 1000;
+    const triggerFetchPoint = document.body.offsetHeight - fetchTriggerPos;
     const fetchMoreImages = scrollPosition >= triggerFetchPoint;
 
-    if (window.scrollY > 58) {
-      mainHeaderEl.classList.add('minimized');
+    if (window.scrollY > minimizeHeaderPos) {
+      mainHeaderEl.classList.add(minimizedClass);
     }
     
-    if (window.scrollY < 45) {
-      mainHeaderEl.classList.remove('minimized');
+    if (window.scrollY < maximizeHeaderPos) {
+      mainHeaderEl.classList.remove(maximizedClass);
     }
 
     if (allImagesLoaded && fetchMoreImages) {
