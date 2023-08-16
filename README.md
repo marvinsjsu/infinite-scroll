@@ -4,7 +4,7 @@ Having some fun with images displaying Vans shoes.
 
 ## Table of Contents
 
-- [Infinite Scroll](#Infinite Scroll)
+- [Infinite Scroll](#infinite-scroll)
   - [Table of Contents](#table-of-contents)
   - [Project Description](#project-description)
   - [Features](#features)
