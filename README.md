@@ -26,6 +26,7 @@ come from [Unsplash API](https://unsplash.com/developers).
 Currently supported features, include:
 
 - fetching images of Vans shoes
+- fetching images triggered by scrolling
 
 ### future features
 - tiled display of images
