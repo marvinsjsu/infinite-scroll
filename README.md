@@ -31,4 +31,4 @@ Currently supported features, include:
 ### future features
 - tiled display of images
 - display shimmer for loading images
-- add audio track and UI to toggle play
+- add audio track and UI to toggle playback
